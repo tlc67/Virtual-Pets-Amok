@@ -36,9 +36,9 @@ public class Application {
             int userInput = input.nextInt();
 
             if (userInput == 1) {
-                virtualPets.feedAllPets();
+                virtualPets.feedRealPets();
             } else if (userInput == 2) {
-                virtualPets.waterAllPets();
+                virtualPets.waterRealPets();
             } else if (userInput == 3) {
                 System.out.println("Ok, so you would like to play with a pet. Please choose one.");
                 for (VirtualPet pet : virtualPets.pets) {

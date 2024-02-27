@@ -30,15 +30,27 @@ public class VirtualPetShelter {
         }
     }
 
-    public void feedAllPets() {
+    public void feedRealPets() {
         for (VirtualPet pet : this.pets) {
             pet.feedPet();
         }
     }
 
-    public void waterAllPets() {
+    public void waterRealPets() {
         for (VirtualPet pet : this.pets) {
             pet.waterPet();
+        }
+    }
+
+    public void oilRoboticPets() {
+        for (VirtualPet pet : this.pets) {
+            pet.oilPet();
+        }
+    }
+
+    public void maintainRoboticPets() {
+        for (VirtualPet pet : this.pets) {
+            pet.maintainPet();
         }
     }
 
@@ -47,6 +59,20 @@ public class VirtualPetShelter {
             if (petToPlayWith.equals(pet.getPetName())) {
                 pet.playWithPet();
             }
+        }
+    }
+
+    public void cleanDogCages() {
+        this.cleanDogCages();
+    }
+
+    public void cleanLitterBoxes() {
+        this.cleanLitterBoxes();
+    }
+
+    public void walkAllPets() {
+        for (VirtualPet pet : this.pets) {
+            pet.walkPet();
         }
     }
 
