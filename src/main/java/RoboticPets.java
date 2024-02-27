@@ -24,7 +24,7 @@ public class RoboticPets extends VirtualPet implements MaintenanceForRoboticPets
 
     @Override
     public int calculateHappinessLevel() {
-        happinessLevel = this.lubrication + happinessLevel;
+        happinessLevel = this.lubrication + this.condition;
         return happinessLevel;
     }
 

@@ -5,6 +5,11 @@ public abstract class VirtualPet {
     private int thirstLevel;
     private int boredomLevel;
     protected int happinessLevel;
+    private int dogCageWasteLevel;
+    private int litterBoxWasteLevel;
+    protected int oilLevel;
+    private int conditionLevel;
+    private int tirednessLevel;
 
     public VirtualPet(String petName, String petDescription) {
         this.petName = petName;
@@ -13,6 +18,11 @@ public abstract class VirtualPet {
         this.thirstLevel = 50;
         this.boredomLevel = 50;
         this.happinessLevel = 50;
+        this.dogCageWasteLevel = 0;
+        this.litterBoxWasteLevel = 0;
+        this.oilLevel = 50;
+        this.conditionLevel = 50;
+        this.tirednessLevel = 50;
     }
 
     public String getPetName() {
@@ -63,6 +73,46 @@ public abstract class VirtualPet {
         this.happinessLevel = happinessLevel;
     }
 
+    public int getDogCageWasteLevel() {
+        return dogCageWasteLevel;
+    }
+
+    public void setDogCageWasteLevel(int dogCageWasteLevel) {
+        this.dogCageWasteLevel = dogCageWasteLevel;
+    }
+
+    public int getLitterBoxWasteLevel() {
+        return litterBoxWasteLevel;
+    }
+
+    public void setLitterBoxWasteLevel(int litterBoxWasteLevel) {
+        this.litterBoxWasteLevel = litterBoxWasteLevel;
+    }
+
+    public int getOilLevel() {
+        return oilLevel;
+    }
+
+    public void setOilLevel(int oilLevel) {
+        this.oilLevel = oilLevel;
+    }
+
+    public int getConditionLevel() {
+        return conditionLevel;
+    }
+
+    public void setConditionLevel(int conditionLevel) {
+        this.conditionLevel = conditionLevel;
+    }
+
+    public int getTirednessLevel() {
+        return tirednessLevel;
+    }
+
+    public void setTirednessLevel(int tirednessLevel) {
+        this.tirednessLevel = tirednessLevel;
+    }
+
     public void feedPet() {
         this.hungerLevel -= 10;
     }
@@ -73,6 +123,26 @@ public abstract class VirtualPet {
 
     public void playWithPet() {
         this.boredomLevel -= 10;
+    }
+
+    public void oilPet() {
+        this.oilLevel -= 10;
+    }
+
+    public void maintainPet() {
+        this.conditionLevel -= 10;
+    }
+
+    public void cleanDogCages() {
+        this.happinessLevel += 5;
+    }
+
+    public void cleanLitterBoxes() {
+        this.happinessLevel += 5;
+    }
+
+    public void walkPet() {
+        this.tirednessLevel -= 10;
     }
 
     @Override
@@ -87,6 +157,8 @@ public abstract class VirtualPet {
         setHungerLevel(this.hungerLevel += 1);
         setThirstLevel(this.thirstLevel += 1);
         setBoredomLevel(this.boredomLevel += 1);
+        setDogCageWasteLevel(this.dogCageWasteLevel = +1);
+        setLitterBoxWasteLevel(this.litterBoxWasteLevel = +2);
     }
 
 }
