@@ -16,6 +16,46 @@ public class VirtualPetShelter {
 
     }
 
+    public ArrayList<VirtualPet> getRealPets() {
+        ArrayList<VirtualPet> realPets = new ArrayList<VirtualPet>();
+        for (VirtualPet pet : this.pets) {
+            if (pet instanceof RealPet) {
+                realPets.add(pet);
+            }
+        }
+        return realPets;
+    }
+
+    public ArrayList<VirtualPet> getRoboticPets() {
+        ArrayList<VirtualPet> roboticPets = new ArrayList<VirtualPet>();
+        for (VirtualPet pet : this.pets) {
+            if (pet instanceof RoboticPet) {
+                roboticPets.add(pet);
+            }
+        }
+        return roboticPets;
+    }
+
+    public ArrayList<VirtualPet> getRealDogs() {
+        ArrayList<VirtualPet> realDogs = new ArrayList<VirtualPet>();
+        for (VirtualPet pet : this.pets) {
+            if (pet instanceof RealDog) {
+                realDogs.add(pet);
+            }
+        }
+        return realDogs;
+    }
+
+    public ArrayList<VirtualPet> getRealCats() {
+        ArrayList<VirtualPet> realCats = new ArrayList<VirtualPet>();
+        for (VirtualPet pet : this.pets) {
+            if (pet instanceof RealCat) {
+                realCats.add(pet);
+            }
+        }
+        return realCats;
+    }
+
     public void addPet(VirtualPet thePet) {
         this.pets.add(thePet);
     }
@@ -31,25 +71,25 @@ public class VirtualPetShelter {
     }
 
     public void feedRealPets() {
-        for (VirtualPet pet : this.pets) {
+        for (VirtualPet pet : getRealPets()) {
             pet.feedPet();
         }
     }
 
     public void waterRealPets() {
-        for (VirtualPet pet : this.pets) {
+        for (VirtualPet pet : getRealPets()) {
             pet.waterPet();
         }
     }
 
     public void oilRoboticPets() {
-        for (VirtualPet pet : this.pets) {
+        for (VirtualPet pet : getRoboticPets()) {
             pet.oilPet();
         }
     }
 
     public void maintainRoboticPets() {
-        for (VirtualPet pet : this.pets) {
+        for (VirtualPet pet : getRoboticPets()) {
             pet.maintainPet();
         }
     }
@@ -62,18 +102,22 @@ public class VirtualPetShelter {
         }
     }
 
-    public void cleanDogCages() {
-        this.cleanDogCages();
-    }
-
-    public void cleanLitterBoxes() {
-        this.cleanLitterBoxes();
-    }
-
-    public void walkAllPets() {
-        for (VirtualPet pet : this.pets) {
-            pet.walkPet();
+    public void cleanDogCage() {
+        for (VirtualPet pet : getRealDogs()) {
+            pet.cleanDogCage();
         }
+
+    }
+
+    public void cleanLitterBox() {
+        for (VirtualPet pet : getRealCats()) {
+            pet.cleanLitterBox();
+        }
+
+    }
+
+    public void walkAllDogs() {
+        this.walkAllDogs();
     }
 
     public void tick() {
