@@ -1,3 +1,4 @@
+package pets_amok;
 
 import java.util.ArrayList;
 
@@ -54,6 +55,16 @@ public class VirtualPetShelter {
             }
         }
         return realCats;
+    }
+
+    public ArrayList<VirtualPet> getAllDogs() {
+        ArrayList<VirtualPet> allDogs = new ArrayList<VirtualPet>();
+        for (VirtualPet pet : this.pets) {
+            if (pet instanceof RealDog || pet instanceof RoboticDog) {
+                allDogs.add(pet);
+            }
+        }
+        return allDogs;
     }
 
     public void addPet(VirtualPet thePet) {
@@ -117,7 +128,9 @@ public class VirtualPetShelter {
     }
 
     public void walkAllDogs() {
-        this.walkAllDogs();
+        for (VirtualPet pet : getAllDogs()) {
+            pet.walkDog();
+        }
     }
 
     public void tick() {

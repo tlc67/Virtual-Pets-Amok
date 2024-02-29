@@ -1,3 +1,5 @@
+package pets_amok;
+
 public abstract class VirtualPet {
     protected String petName;
     protected String petDescription;
@@ -5,12 +7,12 @@ public abstract class VirtualPet {
     protected int happinessLevel;
     protected int healthLevel;
 
-    public VirtualPet(String petName, String petDescription, int boredomLevel, int happinessLevel, int healthLevel) {
+    public VirtualPet(String petName, String petDescription) {
         this.petName = petName;
         this.petDescription = petDescription;
         this.boredomLevel = 50;
-        this.happinessLevel = 100;
-        this.healthLevel = 100;
+        this.happinessLevel = 50;
+        this.healthLevel = 50;
     }
 
     public String getPetName() {
@@ -78,6 +80,10 @@ public abstract class VirtualPet {
     }
 
     public void cleanLitterBox() {
+
+    }
+
+    public void walkDog() {
 
     }
 

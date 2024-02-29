@@ -1,22 +1,15 @@
-public class RoboticPet extends VirtualPet implements MaintenanceForRoboticPets {
+package pets_amok;
+
+public abstract class RoboticPet extends VirtualPet implements MaintenanceForRoboticPets {
 
     protected int oilLevel;
     protected int conditionLevel;
-    protected int batteryCharge;
 
-    public RoboticPet(String petName, String petDescription, int boredomLevel, int happinessLevel, int healthLevel) {
-        super(petName, petDescription, boredomLevel, happinessLevel, healthLevel);
+    public RoboticPet(String petName, String petDescription) {
+        super(petName, petDescription);
         this.oilLevel = 50;
         this.conditionLevel = 50;
-        this.batteryCharge = 50;
-    }
 
-    public int getBatteryCharge() {
-        return batteryCharge;
-    }
-
-    public void setBatteryCharge(int batteryCharge) {
-        this.batteryCharge = batteryCharge;
     }
 
     public int getOilLevel() {
@@ -33,14 +26,6 @@ public class RoboticPet extends VirtualPet implements MaintenanceForRoboticPets 
 
     public void setConditionLevel(int conditionLevel) {
         this.conditionLevel = conditionLevel;
-    }
-
-    public void oilPet() {
-        this.oilLevel -= 10;
-    }
-
-    public void maintainPet() {
-        this.conditionLevel -= 10;
     }
 
     @Override
@@ -63,9 +48,9 @@ public class RoboticPet extends VirtualPet implements MaintenanceForRoboticPets 
 
     @Override
     public void tick() {
-
+        setOilLevel(this.oilLevel -= 1);
+        setConditionLevel(this.conditionLevel -= 1);
         setBoredomLevel(this.boredomLevel += 1);
 
     }
-
 }

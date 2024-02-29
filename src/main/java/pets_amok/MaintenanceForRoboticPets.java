@@ -1,3 +1,5 @@
+package pets_amok;
+
 public interface MaintenanceForRoboticPets {
     public void oiling();
 
