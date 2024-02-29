@@ -1,9 +1,11 @@
+package pets_amok;
+
 public class RealCat extends RealPet {
 
     protected int litterBoxCleanlinessLevel;
 
-    public RealCat(String petName, String petDescription, int boredomLevel, int happinessLevel, int healthLevel) {
-        super(petName, petDescription, boredomLevel, happinessLevel, healthLevel);
+    public RealCat(String petName, String petDescription) {
+        super(petName, petDescription);
         this.litterBoxCleanlinessLevel = 0;
 
     }
@@ -14,6 +16,11 @@ public class RealCat extends RealPet {
 
     public void setLitterBoxCleanlinessLevel(int litterBoxCleanlinessLevel) {
         this.litterBoxCleanlinessLevel = litterBoxCleanlinessLevel;
+    }
+
+    @Override
+    public void cleanLitterBox() {
+        this.litterBoxCleanlinessLevel += 10;
     }
 
     public void tick() {
