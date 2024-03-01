@@ -79,10 +79,6 @@ public abstract class VirtualPet {
 
     }
 
-    public void cleanLitterBox() {
-
-    }
-
     public void walkDog() {
 
     }
