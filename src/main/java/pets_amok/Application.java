@@ -42,8 +42,8 @@ public class Application {
             System.out.println("Enter 8 to admit a pet.");
             System.out.println("Enter 9 to adopt a pet.");
             System.out.println("Enter 0 to quit game.");
-            System.out.println("If level reaches 100, you lose game.");
-            System.out.println("If level reaches 0, you lose game.");
+            System.out.println("If health status reaches 0, you lose game.");
+            System.out.println("If happiness level reaches 0, you lose game.");
             System.out.println("What would you like to do next?");
 
             int userInput = input.nextInt();
@@ -112,8 +112,9 @@ public class Application {
             } else if (userInput == 0) {
                 stillPlayingGame = false;
                 System.out.println("You have exited the game.");
-            }
 
+            }
+            System.out.println("Real cats | litter box cleanliness " + virtualPets.getLitterBoxCleanlinessLevel());
             System.out.println("Name\t| Hunger| Thirst| Boredom | Happiness | Health");
             System.out.println("--------|-------|-------|---------|-----------|---------");
             for (VirtualPet pet : virtualPets.getRealCats()) {
@@ -122,7 +123,7 @@ public class Application {
                         + "\t| " + pet.getBoredomLevel() + "\t| "
                         + ((RealCat) pet).getHappinessLevel() + "\t| " + ((RealCat) pet).getHealthStatus());
             }
-
+            System.out.println("Real dogs");
             System.out.println("Name\t| Hunger| Thirst| Boredom | Cleanliness | Happiness | Health");
             System.out.println("--------|-------|-------|--------|------------|-----------|--------");
             for (VirtualPet pet : virtualPets.getRealDogs()) {
@@ -131,7 +132,7 @@ public class Application {
                         + "\t| " + pet.getBoredomLevel() + "\t| " + ((RealDog) pet).getCageCleanlinessLevel()
                         + "\t| " + ((RealDog) pet).getHappinessLevel() + "\t| " + ((RealDog) pet).getHealthStatus());
             }
-
+            System.out.println("Robotic cats");
             System.out.println("Name\t| Oiling| Maintenance | Boredom | Happiness | Health");
             System.out.println("--------|-------|-----------|----------|----------|--------");
             for (VirtualPet pet : virtualPets.getRoboticCats()) {
@@ -141,7 +142,7 @@ public class Application {
                         + "\t| "
                         + ((RoboticCat) pet).getHealthStatus());
             }
-
+            System.out.println("Robotic dogs");
             System.out.println("Name\t| Oiling| Maintenance | Boredom | Happiness | Health");
             System.out.println("--------|-------|-----------|---------|-----------|--------");
             for (VirtualPet pet : virtualPets.getRoboticDogs()) {

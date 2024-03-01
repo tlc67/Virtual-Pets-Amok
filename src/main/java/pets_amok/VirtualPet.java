@@ -59,10 +59,6 @@ public abstract class VirtualPet {
         this.boredomLevel -= 10;
     }
 
-    public void tickHealth() {
-
-    }
-
     public void feedPet() {
 
     }
@@ -71,11 +67,11 @@ public abstract class VirtualPet {
 
     }
 
-    public void oilPet() {
+    public void oilRoboticPet() {
 
     }
 
-    public void maintainPet() {
+    public void maintainRoboticPet() {
 
     }
 

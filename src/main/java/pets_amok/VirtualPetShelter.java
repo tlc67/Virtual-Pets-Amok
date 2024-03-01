@@ -125,13 +125,13 @@ public class VirtualPetShelter {
 
     public void oilRoboticPets() {
         for (VirtualPet pet : getRoboticPets()) {
-            pet.oilPet();
+            pet.oilRoboticPet();
         }
     }
 
-    public void maintainRoboticPets() {
+    public void maintainRoboticPet() {
         for (VirtualPet pet : getRoboticPets()) {
-            pet.maintainPet();
+            pet.maintainRoboticPet();
         }
     }
 

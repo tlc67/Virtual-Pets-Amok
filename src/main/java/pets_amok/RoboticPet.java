@@ -29,14 +29,15 @@ public abstract class RoboticPet extends VirtualPet implements MaintenanceForRob
     }
 
     @Override
-    public void oiling() {
-        oilLevel += 10;
+    public void oilRoboticPet() {
+        this.oilLevel += 10;
         System.out.println("The robot pets are happy when they are well oiled");
+
     }
 
     @Override
-    public void maintenance() {
-        conditionLevel += 10;
+    public void maintainRoboticPet() {
+        this.conditionLevel += 10;
         System.out.println("The robot pets are happy when they are well maintained");
     }
 

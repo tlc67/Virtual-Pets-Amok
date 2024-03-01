@@ -8,8 +8,8 @@ public class RealDog extends RealPet {
 
     public RealDog(String petName, String petDescription) {
         super(petName, petDescription);
-        this.continenceLevel = 100;
-        this.cageCleanlinessLevel = 100;
+        this.continenceLevel = 50;
+        this.cageCleanlinessLevel = 50;
 
     }
 
@@ -45,7 +45,7 @@ public class RealDog extends RealPet {
 
     @Override
     public void cleanDogCage() {
-        this.cageCleanlinessLevel -= 10;
+        this.cageCleanlinessLevel += 10;
     }
 
     @Override
