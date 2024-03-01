@@ -29,12 +29,6 @@ public abstract class RoboticPet extends VirtualPet implements MaintenanceForRob
     }
 
     @Override
-    public int calculateHappinessLevel() {
-        happinessLevel = this.oilLevel + this.conditionLevel;
-        return happinessLevel;
-    }
-
-    @Override
     public void oiling() {
         oilLevel += 10;
         System.out.println("The robot pets are happy when they are well oiled");
@@ -51,6 +45,19 @@ public abstract class RoboticPet extends VirtualPet implements MaintenanceForRob
         setOilLevel(this.oilLevel -= 1);
         setConditionLevel(this.conditionLevel -= 1);
         setBoredomLevel(this.boredomLevel += 1);
-
+        if (this.oilLevel < 25) {
+            setHealthStatus(this.healthStatus -= 1);
+        } else if (this.conditionLevel < 25) {
+            setHealthStatus(this.healthStatus -= 1);
+        } else if (this.boredomLevel > 75) {
+            setHealthStatus(this.healthStatus -= 1);
+        } else if (this.oilLevel < 25) {
+            setHappinessLevel(this.happinessLevel -= 2);
+        } else if (this.happinessLevel < 25) {
+            setHealthStatus(this.healthStatus -= 2);
+        } else if (this.healthStatus > 50) {
+            setHappinessLevel(this.happinessLevel += 2);
+        }
     }
+
 }

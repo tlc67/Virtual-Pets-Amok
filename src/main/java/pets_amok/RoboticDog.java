@@ -17,8 +17,10 @@ public class RoboticDog extends RoboticPet {
         this.batteryCharge = batteryCharge;
     }
 
+    @Override
     public void walkDog() {
         this.batteryCharge -= 10;
+        this.happinessLevel += 10;
     }
 
 }

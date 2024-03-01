@@ -3,6 +3,7 @@ package pets_amok;
 import java.util.ArrayList;
 
 public class VirtualPetShelter {
+    protected int litterBoxCleanlinessLevel;
     ArrayList<VirtualPet> pets = new ArrayList<VirtualPet>();
 
     public ArrayList<VirtualPet> getPets() {
@@ -14,7 +15,16 @@ public class VirtualPetShelter {
     }
 
     public VirtualPetShelter() {
+        this.litterBoxCleanlinessLevel = 100;
 
+    }
+
+    public int getLitterBoxCleanlinessLevel() {
+        return litterBoxCleanlinessLevel;
+    }
+
+    public void setLitterBoxCleanlinessLevel(int litterBoxCleanlinessLevel) {
+        this.litterBoxCleanlinessLevel = litterBoxCleanlinessLevel;
     }
 
     public ArrayList<VirtualPet> getRealPets() {
@@ -55,6 +65,26 @@ public class VirtualPetShelter {
             }
         }
         return realCats;
+    }
+
+    public ArrayList<VirtualPet> getRoboticDogs() {
+        ArrayList<VirtualPet> roboticDogs = new ArrayList<VirtualPet>();
+        for (VirtualPet pet : this.pets) {
+            if (pet instanceof RoboticDog) {
+                roboticDogs.add(pet);
+            }
+        }
+        return roboticDogs;
+    }
+
+    public ArrayList<VirtualPet> getRoboticCats() {
+        ArrayList<VirtualPet> roboticCats = new ArrayList<VirtualPet>();
+        for (VirtualPet pet : this.pets) {
+            if (pet instanceof RoboticCat) {
+                roboticCats.add(pet);
+            }
+        }
+        return roboticCats;
     }
 
     public ArrayList<VirtualPet> getAllDogs() {
@@ -121,9 +151,7 @@ public class VirtualPetShelter {
     }
 
     public void cleanLitterBox() {
-        for (VirtualPet pet : getRealCats()) {
-            pet.cleanLitterBox();
-        }
+        this.litterBoxCleanlinessLevel = 100;
 
     }
 
@@ -136,6 +164,10 @@ public class VirtualPetShelter {
     public void tick() {
         for (VirtualPet pet : this.pets) {
             pet.tick();
+
+        }
+        for (VirtualPet pet : getRealCats()) {
+            this.litterBoxCleanlinessLevel -= 2;
         }
     }
 
