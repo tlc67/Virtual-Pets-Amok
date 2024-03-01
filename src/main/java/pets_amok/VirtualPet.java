@@ -5,14 +5,14 @@ public abstract class VirtualPet {
     protected String petDescription;
     protected int boredomLevel;
     protected int happinessLevel;
-    protected int healthLevel;
+    protected int healthStatus;
 
     public VirtualPet(String petName, String petDescription) {
         this.petName = petName;
         this.petDescription = petDescription;
         this.boredomLevel = 50;
         this.happinessLevel = 50;
-        this.healthLevel = 50;
+        this.healthStatus = 50;
     }
 
     public String getPetName() {
@@ -47,16 +47,20 @@ public abstract class VirtualPet {
         this.happinessLevel = happinessLevel;
     }
 
-    public int getHealthLevel() {
-        return healthLevel;
+    public int getHealthStatus() {
+        return healthStatus;
     }
 
-    public void setHealthLevel(int healthLevel) {
-        this.healthLevel = healthLevel;
+    public void setHealthStatus(int healthStatus) {
+        this.healthStatus = healthStatus;
     }
 
     public void playWithPet() {
         this.boredomLevel -= 10;
+    }
+
+    public void tickHealth() {
+
     }
 
     public void feedPet() {
@@ -87,7 +91,13 @@ public abstract class VirtualPet {
 
     }
 
-    public abstract int calculateHappinessLevel();
+    public void happinessLevel() {
+
+    }
+
+    public void healthStatus() {
+
+    }
 
     public abstract void tick();
 

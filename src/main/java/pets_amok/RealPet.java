@@ -58,21 +58,21 @@ public abstract class RealPet extends VirtualPet implements MaintenanceForRealPe
     }
 
     @Override
-    public int calculateHappinessLevel() {
-        happinessLevel = this.cleanDogCage + this.cleanLitterBox;
-        return happinessLevel;
-    }
-
-    @Override
     public void cleanDogCage() {
-        happinessLevel += 10;
+        this.happinessLevel += 10;
         System.out.println("The dogs are happy with a clean cage");
     }
 
     @Override
     public void cleanLitterBox() {
-        happinessLevel += 10;
+        this.happinessLevel += 10;
         System.out.println("The cats are happy with a clean litter box");
+    }
+
+    @Override
+    public int getHappinessLevel() {
+        return happinessLevel;
+
     }
 
     @Override
@@ -80,6 +80,18 @@ public abstract class RealPet extends VirtualPet implements MaintenanceForRealPe
         setHungerLevel(this.hungerLevel += 1);
         setThirstLevel(this.thirstLevel += 1);
         setBoredomLevel(this.boredomLevel += 1);
+        if (this.hungerLevel > 75) {
+            setHealthStatus(this.healthStatus -= 1);
+        } else if (this.thirstLevel > 75) {
+            setHealthStatus(this.healthStatus -= 1);
+        } else if (this.boredomLevel > 75) {
+            setHealthStatus(this.healthStatus -= 1);
+        } else if (this.happinessLevel < 25) {
+            setHealthStatus(this.healthStatus -= 2);
+        } else if (this.healthStatus > 50) {
+            setHappinessLevel(this.happinessLevel += 2);
+        }
 
     }
+
 }
