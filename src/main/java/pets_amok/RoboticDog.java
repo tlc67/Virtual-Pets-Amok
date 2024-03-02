@@ -6,7 +6,6 @@ public class RoboticDog extends RoboticPet {
     public RoboticDog(String petName, String petDescription) {
         super(petName, petDescription);
         this.batteryCharge = 50;
-
     }
 
     public int getBatteryCharge() {
