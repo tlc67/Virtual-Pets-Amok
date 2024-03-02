@@ -10,7 +10,6 @@ public class RealDog extends RealPet {
         super(petName, petDescription);
         this.continenceLevel = 50;
         this.cageCleanlinessLevel = 50;
-
     }
 
     public int getContinenceLevel() {
@@ -54,20 +53,25 @@ public class RealDog extends RealPet {
         setThirstLevel(this.thirstLevel += 1);
         setBoredomLevel(this.boredomLevel += 1);
         setContinenceLevel(this.continenceLevel -= 2);
+
         if (this.continenceLevel < 25) {
             setCageCleanlinessLevel(this.cageCleanlinessLevel -= 5);
-        } else if (this.hungerLevel > 75) {
+        }
+        if (this.hungerLevel > 75) {
             setHealthStatus(this.healthStatus -= 1);
-        } else if (this.thirstLevel > 75) {
+        }
+        if (this.thirstLevel > 75) {
             setHealthStatus(this.healthStatus -= 1);
-        } else if (this.boredomLevel > 75) {
+        }
+        if (this.boredomLevel > 75) {
             setHealthStatus(this.healthStatus -= 1);
-        } else if (this.cageCleanlinessLevel < 25) {
+        }
+        if (this.cageCleanlinessLevel < 25) {
             setHappinessLevel(this.happinessLevel - +2);
-        } else if (this.happinessLevel < 25) {
+        }
+        if (this.happinessLevel < 25) {
             setHealthStatus(this.healthStatus -= 2);
         }
-
     }
 
 }

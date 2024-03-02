@@ -3,8 +3,8 @@ package pets_amok;
 import java.util.Scanner;
 
 public class Application {
-
     public static void main(String[] args) {
+
         Scanner input = new Scanner(System.in);
 
         RealCat oreo = new RealCat("Oreo",
@@ -67,7 +67,6 @@ public class Application {
                 virtualPets.walkAllDogs();
             } else if (userInput == 5) {
                 virtualPets.cleanDogCage();
-
             } else if (userInput == 6) {
                 virtualPets.oilRoboticPets();
             } else if (userInput == 7) {
@@ -98,7 +97,6 @@ public class Application {
                     VirtualPet RoboticDog = new RoboticDog(userInputNewName, userInputDescription);
                     virtualPets.addPet(RoboticDog);
                 }
-
             } else if (userInput == 9) {
                 for (VirtualPet pet : virtualPets.pets) {
                     System.out.println(pet.getPetName());
@@ -112,44 +110,40 @@ public class Application {
             } else if (userInput == 0) {
                 stillPlayingGame = false;
                 System.out.println("You have exited the game.");
-
             }
-            System.out.println("Real cats | litter box cleanliness " + virtualPets.getLitterBoxCleanlinessLevel());
-            System.out.println("Name\t| Hunger| Thirst| Boredom | Happiness | Health");
-            System.out.println("--------|-------|-------|---------|-----------|---------");
+            System.out.println("(Real Cats) | litter box cleanliness " + virtualPets.getLitterBoxCleanlinessLevel());
+            System.out.println("Name\t| Hunger| Thirst|Boredom| Happiness| Health");
+            System.out.println("--------|-------|-------|-------|----------|---------");
             for (VirtualPet pet : virtualPets.getRealCats()) {
                 System.out.println(pet.getPetName() + "\t| " + ((RealCat) pet).getHungerLevel() + "\t| "
-                        + ((RealCat) pet).getThirstLevel()
-                        + "\t| " + pet.getBoredomLevel() + "\t| "
-                        + ((RealCat) pet).getHappinessLevel() + "\t| " + ((RealCat) pet).getHealthStatus());
+                        + ((RealCat) pet).getThirstLevel() + "\t| " + pet.getBoredomLevel() + "\t| "
+                        + ((RealCat) pet).getHappinessLevel() + "\t   | " + "\t" + ((RealCat) pet).getHealthStatus());
             }
-            System.out.println("Real dogs");
+            System.out.println("(Real Dogs)");
             System.out.println("Name\t| Hunger| Thirst| Boredom | Cleanliness | Happiness | Health");
-            System.out.println("--------|-------|-------|--------|------------|-----------|--------");
+            System.out.println("--------|-------|-------|--------|-------------|-----------|--------");
             for (VirtualPet pet : virtualPets.getRealDogs()) {
                 System.out.println(pet.getPetName() + "\t| " + ((RealDog) pet).getHungerLevel() + "\t| "
                         + ((RealDog) pet).getThirstLevel()
                         + "\t| " + pet.getBoredomLevel() + "\t| " + ((RealDog) pet).getCageCleanlinessLevel()
                         + "\t| " + ((RealDog) pet).getHappinessLevel() + "\t| " + ((RealDog) pet).getHealthStatus());
             }
-            System.out.println("Robotic cats");
+            System.out.println("(Robotic Cats)");
             System.out.println("Name\t| Oiling| Maintenance | Boredom | Happiness | Health");
-            System.out.println("--------|-------|-----------|----------|----------|--------");
+            System.out.println("--------|-------|-------------|----------|----------|--------");
             for (VirtualPet pet : virtualPets.getRoboticCats()) {
                 System.out.println(pet.getPetName() + "\t| " + ((RoboticCat) pet).getOilLevel() + "\t| "
-                        + ((RoboticCat) pet).getConditionLevel() + "\t| " + pet.getBoredomLevel() + "\t| "
-                        + ((RoboticCat) pet).getHappinessLevel()
-                        + "\t| "
-                        + ((RoboticCat) pet).getHealthStatus());
+                        + ((RoboticCat) pet).getConditionLevel() + "\t| " + "\t" + pet.getBoredomLevel() + "\t| "
+                        + ((RoboticCat) pet).getHappinessLevel() + "\t| " + ((RoboticCat) pet).getHealthStatus());
             }
-            System.out.println("Robotic dogs");
+            System.out.println("(Robotic Dogs)");
             System.out.println("Name\t| Oiling| Maintenance | Boredom | Happiness | Health");
-            System.out.println("--------|-------|-----------|---------|-----------|--------");
+            System.out.println("--------|-------|-------------|---------|-----------|--------");
             for (VirtualPet pet : virtualPets.getRoboticDogs()) {
-                System.out.println(pet.getPetName() + "\t| " + ((RoboticDog) pet).getOilLevel() + "\t| "
-                        + ((RoboticDog) pet).getConditionLevel() + "\t| " + pet.getBoredomLevel() + "\t| "
-                        + ((RoboticDog) pet).getHappinessLevel()
-                        + "\t| "
+                System.out.println(pet.getPetName() + "\t| " + ((RoboticDog) pet).getOilLevel() + "\t| " + "\t"
+                        + ((RoboticDog) pet).getConditionLevel()
+                        + "\t| " + pet.getBoredomLevel() + "\t "
+                        + "\t| " + ((RoboticDog) pet).getHappinessLevel() + "\t| "
                         + ((RoboticDog) pet).getHealthStatus());
             }
 
@@ -164,9 +158,7 @@ public class Application {
             }
             virtualPets.tick();
         }
-
         input.close();
-
     }
 
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class VirtualPetShelter {
     protected int litterBoxCleanlinessLevel;
+
     ArrayList<VirtualPet> pets = new ArrayList<VirtualPet>();
 
     public ArrayList<VirtualPet> getPets() {
@@ -16,7 +17,6 @@ public class VirtualPetShelter {
 
     public VirtualPetShelter() {
         this.litterBoxCleanlinessLevel = 100;
-
     }
 
     public int getLitterBoxCleanlinessLevel() {
@@ -147,12 +147,10 @@ public class VirtualPetShelter {
         for (VirtualPet pet : getRealDogs()) {
             pet.cleanDogCage();
         }
-
     }
 
     public void cleanLitterBox() {
         this.litterBoxCleanlinessLevel = 100;
-
     }
 
     public void walkAllDogs() {
@@ -164,7 +162,6 @@ public class VirtualPetShelter {
     public void tick() {
         for (VirtualPet pet : this.pets) {
             pet.tick();
-
         }
         for (VirtualPet pet : getRealCats()) {
             this.litterBoxCleanlinessLevel -= 2;
