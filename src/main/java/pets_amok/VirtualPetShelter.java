@@ -163,7 +163,7 @@ public class VirtualPetShelter {
         for (VirtualPet pet : this.pets) {
             pet.tick();
         }
-        for (VirtualPet pet : getRealCats()) {
+        for (int x = 0; x < getRealCats().size(); x++) {
             this.litterBoxCleanlinessLevel -= 2;
         }
     }

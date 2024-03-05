@@ -1,10 +1,10 @@
 package pets_amok;
 
-public class RealDog extends RealPet {
+public class RealDog extends RealPet implements MaintenanceForRealDogs {
 
-    protected int continenceLevel;
-    protected int cageCleanlinessLevel;
-    protected int cleanDogCage;
+    private int continenceLevel;
+    private int cageCleanlinessLevel;
+    private int cleanDogCage;
 
     public RealDog(String petName, String petDescription) {
         super(petName, petDescription);
@@ -67,7 +67,7 @@ public class RealDog extends RealPet {
             setHealthStatus(this.healthStatus -= 1);
         }
         if (this.cageCleanlinessLevel < 25) {
-            setHappinessLevel(this.happinessLevel - +2);
+            setHappinessLevel(this.happinessLevel -= 2);
         }
         if (this.happinessLevel < 25) {
             setHealthStatus(this.healthStatus -= 2);
