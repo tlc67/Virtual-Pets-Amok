@@ -133,7 +133,7 @@ public class Application {
             System.out.println("--------|-------|-------------|----------|----------|--------");
             for (VirtualPet pet : virtualPets.getRoboticCats()) {
                 System.out.println(pet.getPetName() + "\t| " + ((RoboticCat) pet).getOilLevel() + "\t| "
-                        + ((RoboticCat) pet).getConditionLevel() + "\t| " + "\t" + pet.getBoredomLevel() + "\t| "
+                        + ((RoboticCat) pet).getMaintenanceLevel() + "\t| " + "\t" + pet.getBoredomLevel() + "\t| "
                         + ((RoboticCat) pet).getHappinessLevel() + "\t| " + ((RoboticCat) pet).getHealthStatus());
             }
             System.out.println("(Robotic Dogs)");
@@ -141,7 +141,7 @@ public class Application {
             System.out.println("--------|-------|-------------|---------|-----------|--------");
             for (VirtualPet pet : virtualPets.getRoboticDogs()) {
                 System.out.println(pet.getPetName() + "\t| " + ((RoboticDog) pet).getOilLevel() + "\t| " + "\t"
-                        + ((RoboticDog) pet).getConditionLevel()
+                        + ((RoboticDog) pet).getMaintenanceLevel()
                         + "\t| " + pet.getBoredomLevel() + "\t "
                         + "\t| " + ((RoboticDog) pet).getHappinessLevel() + "\t| "
                         + ((RoboticDog) pet).getHealthStatus());

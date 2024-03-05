@@ -2,12 +2,12 @@ package pets_amok;
 
 public abstract class RoboticPet extends VirtualPet implements MaintenanceForRoboticPets {
     protected int oilLevel;
-    protected int conditionLevel;
+    protected int maintenanceLevel;
 
     public RoboticPet(String petName, String petDescription) {
         super(petName, petDescription);
         this.oilLevel = 50;
-        this.conditionLevel = 50;
+        this.maintenanceLevel = 50;
     }
 
     public int getOilLevel() {
@@ -18,12 +18,12 @@ public abstract class RoboticPet extends VirtualPet implements MaintenanceForRob
         this.oilLevel = oilLevel;
     }
 
-    public int getConditionLevel() {
-        return conditionLevel;
+    public int getMaintenanceLevel() {
+        return maintenanceLevel;
     }
 
-    public void setConditionLevel(int conditionLevel) {
-        this.conditionLevel = conditionLevel;
+    public void setMaintenanceLevel(int maintenanceLevel) {
+        this.maintenanceLevel = maintenanceLevel;
     }
 
     @Override
@@ -34,20 +34,20 @@ public abstract class RoboticPet extends VirtualPet implements MaintenanceForRob
 
     @Override
     public void maintainRoboticPet() {
-        this.conditionLevel += 10;
+        this.maintenanceLevel += 10;
         System.out.println("The robot pets are happy when they are well maintained");
     }
 
     @Override
     public void tick() {
         setOilLevel(this.oilLevel -= 1);
-        setConditionLevel(this.conditionLevel -= 1);
+        setMaintenanceLevel(this.maintenanceLevel -= 1);
         setBoredomLevel(this.boredomLevel += 1);
 
         if (this.oilLevel < 25) {
             setHealthStatus(this.healthStatus -= 1);
         }
-        if (this.conditionLevel < 25) {
+        if (this.maintenanceLevel < 25) {
             setHealthStatus(this.healthStatus -= 1);
         }
         if (this.boredomLevel > 75) {

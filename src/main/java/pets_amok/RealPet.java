@@ -1,6 +1,6 @@
 package pets_amok;
 
-public abstract class RealPet extends VirtualPet implements MaintenanceForRealPets {
+public abstract class RealPet extends VirtualPet {
     protected int cleanLitterBox;
     protected int cleanDogCage;
     protected int hungerLevel;
@@ -63,37 +63,8 @@ public abstract class RealPet extends VirtualPet implements MaintenanceForRealPe
     }
 
     @Override
-    public void cleanLitterBox() {
-        this.happinessLevel += 10;
-        System.out.println("The cats are happy with a clean litter box");
-    }
-
-    @Override
     public int getHappinessLevel() {
         return happinessLevel;
-    }
-
-    @Override
-    public void tick() {
-        setHungerLevel(this.hungerLevel += 1);
-        setThirstLevel(this.thirstLevel += 1);
-        setBoredomLevel(this.boredomLevel += 1);
-
-        if (this.hungerLevel > 75) {
-            setHealthStatus(this.healthStatus -= 1);
-        }
-        if (this.thirstLevel > 75) {
-            setHealthStatus(this.healthStatus -= 1);
-        }
-        if (this.boredomLevel > 75) {
-            setHealthStatus(this.healthStatus -= 1);
-        }
-        if (this.happinessLevel < 25) {
-            setHealthStatus(this.healthStatus -= 2);
-        }
-        if (this.healthStatus > 50) {
-            setHappinessLevel(this.happinessLevel += 2);
-        }
     }
 
 }

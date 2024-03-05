@@ -1,8 +1,6 @@
 package pets_amok;
 
-public interface MaintenanceForRealPets {
-
-    public void cleanLitterBox();
+public interface MaintenanceForRealDogs {
 
     public void walkDog();
 
