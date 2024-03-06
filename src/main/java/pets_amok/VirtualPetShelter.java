@@ -113,25 +113,33 @@ public class VirtualPetShelter {
 
     public void feedRealPets() {
         for (VirtualPet pet : getRealPets()) {
-            pet.feedPet();
+            if (pet instanceof RealPet) {
+                ((RealPet) pet).feedPet();
+            }
         }
     }
 
     public void waterRealPets() {
         for (VirtualPet pet : getRealPets()) {
-            pet.waterPet();
+            if (pet instanceof RealPet) {
+                ((RealPet) pet).waterPet();
+            }
         }
     }
 
     public void oilRoboticPets() {
         for (VirtualPet pet : getRoboticPets()) {
-            pet.oilRoboticPet();
+            if (pet instanceof RoboticPet) {
+                ((RoboticPet) pet).oilRoboticPet();
+            }
         }
     }
 
     public void maintainRoboticPet() {
         for (VirtualPet pet : getRoboticPets()) {
-            pet.maintainRoboticPet();
+            if (pet instanceof RoboticPet) {
+                ((RoboticPet) pet).maintainRoboticPet();
+            }
         }
     }
 
@@ -143,9 +151,11 @@ public class VirtualPetShelter {
         }
     }
 
-    public void cleanDogCage() {
+    public void cleanDogCages() {
         for (VirtualPet pet : getRealDogs()) {
-            pet.cleanDogCage();
+            if (pet instanceof RealDog) {
+                ((RealDog) pet).cleanDogCage();
+            }
         }
     }
 
@@ -155,7 +165,12 @@ public class VirtualPetShelter {
 
     public void walkAllDogs() {
         for (VirtualPet pet : getAllDogs()) {
-            pet.walkDog();
+            if (pet instanceof RealDog) {
+                ((RealDog) pet).walkDog();
+            }
+            if (pet instanceof RoboticDog) {
+                ((RoboticDog) pet).walkDog();
+            }
         }
     }
 

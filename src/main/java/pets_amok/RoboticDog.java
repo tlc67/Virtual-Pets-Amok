@@ -6,7 +6,6 @@ public class RoboticDog extends RoboticPet {
         super(petName, petDescription);
     }
 
-    @Override
     public void walkDog() {
         this.happinessLevel += 10;
     }

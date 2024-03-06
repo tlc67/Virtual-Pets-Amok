@@ -66,7 +66,7 @@ public class Application {
             } else if (userInput == 4) {
                 virtualPets.walkAllDogs();
             } else if (userInput == 5) {
-                virtualPets.cleanDogCage();
+                virtualPets.cleanDogCages();
             } else if (userInput == 6) {
                 virtualPets.oilRoboticPets();
             } else if (userInput == 7) {

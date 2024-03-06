@@ -1,13 +1,13 @@
 package pets_amok;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class VirtualPetShelterTest {
-
     private VirtualPetShelter virtualPets;
+    private RoboticDog astro;
 
     @BeforeEach
     public void setup() {
@@ -18,7 +18,7 @@ public class VirtualPetShelterTest {
         RealDog obi = new RealDog("Obi", "He is a big baby.");
         RoboticCat joe = new RoboticCat("Joe",
                 "He loves to snuggle on your lap, but is a little timid around small children.");
-        RoboticDog astro = new RoboticDog("Astro", "He is the space dog of the future.");
+        astro = new RoboticDog("Astro", "He is the space dog of the future.");
 
         virtualPets.addPet(oreo);
         virtualPets.addPet(obi);
@@ -30,15 +30,23 @@ public class VirtualPetShelterTest {
     public void testAddPet() {
         RealCat marvel = new RealCat("Marvel", "He is a loner.");
         virtualPets.addPet(marvel);
-
         assertEquals(5, virtualPets.getPets().size());
+
+        for (VirtualPet pet : virtualPets.pets) {
+            if (marvel.petName.equals(pet.getPetName())) {
+                assertEquals(marvel, pet);
+            }
+        }
     }
 
     @Test
     public void testRemovePet() {
         virtualPets.removePet("Astro");
-
         assertEquals(3, virtualPets.getPets().size());
+
+        for (VirtualPet pet : virtualPets.pets) {
+            assertNotEquals(astro, pet);
+        }
     }
 
     @Test
@@ -67,7 +75,6 @@ public class VirtualPetShelterTest {
     public void testPlayWithChosenPet() {
         String petToPlayWith = "Obi";
         virtualPets.playWithChosenPet(petToPlayWith);
-
         for (VirtualPet pet : virtualPets.getPets()) {
             if (petToPlayWith.equals(pet.getPetName())) {
                 assertEquals(40, pet.getBoredomLevel());
@@ -79,19 +86,14 @@ public class VirtualPetShelterTest {
 
     @Test
     public void testWalkAllDogs() {
-
         virtualPets.walkAllDogs();
         for (VirtualPet pet : virtualPets.getRealDogs()) {
-
             assertEquals(60, ((RealDog) pet).getHappinessLevel());
             assertEquals(60, ((RealDog) pet).getContinenceLevel());
         }
-
         for (VirtualPet pet : virtualPets.getRoboticDogs()) {
-
             assertEquals(60, ((RoboticDog) pet).getHappinessLevel());
         }
-
     }
 
 }
