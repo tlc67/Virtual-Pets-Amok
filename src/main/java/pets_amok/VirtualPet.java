@@ -59,38 +59,8 @@ public abstract class VirtualPet {
         this.boredomLevel -= 10;
     }
 
-    public void feedPet() {
+    public void tick() {
 
     }
-
-    public void waterPet() {
-
-    }
-
-    public void oilRoboticPet() {
-
-    }
-
-    public void maintainRoboticPet() {
-
-    }
-
-    public void cleanDogCage() {
-
-    }
-
-    public void walkDog() {
-
-    }
-
-    public void happinessLevel() {
-
-    }
-
-    public void healthStatus() {
-
-    }
-
-    public abstract void tick();
 
 }

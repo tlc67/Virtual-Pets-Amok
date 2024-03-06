@@ -64,4 +64,5 @@ public class VirtualPetTest {
 
         assertEquals(60, virtualPet.getCageCleanlinessLevel());
     }
+
 }

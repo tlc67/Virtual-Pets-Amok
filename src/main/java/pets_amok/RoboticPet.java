@@ -26,13 +26,11 @@ public abstract class RoboticPet extends VirtualPet implements MaintenanceForRob
         this.maintenanceLevel = maintenanceLevel;
     }
 
-    @Override
     public void oilRoboticPet() {
         this.oilLevel += 10;
         System.out.println("The robot pets are happy when they are well oiled");
     }
 
-    @Override
     public void maintainRoboticPet() {
         this.maintenanceLevel += 10;
         System.out.println("The robot pets are happy when they are well maintained");
@@ -43,7 +41,6 @@ public abstract class RoboticPet extends VirtualPet implements MaintenanceForRob
         setOilLevel(this.oilLevel -= 1);
         setMaintenanceLevel(this.maintenanceLevel -= 1);
         setBoredomLevel(this.boredomLevel += 1);
-
         if (this.oilLevel < 25) {
             setHealthStatus(this.healthStatus -= 1);
         }

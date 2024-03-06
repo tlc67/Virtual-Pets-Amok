@@ -8,21 +8,7 @@ public class RealCat extends RealPet {
 
     @Override
     public void tick() {
-        setHungerLevel(this.hungerLevel += 1);
-        setThirstLevel(this.thirstLevel += 1);
-        setBoredomLevel(this.boredomLevel += 1);
-
-        if (this.hungerLevel > 75) {
-            setHealthStatus(this.healthStatus -= 1);
-        }
-        if (this.thirstLevel > 75) {
-            setHealthStatus(this.healthStatus -= 1);
-        }
-        if (this.boredomLevel > 75) {
-            setHealthStatus(this.healthStatus -= 1);
-        }
-        if (this.happinessLevel < 25) {
-            setHealthStatus(this.healthStatus -= 2);
-        }
+        super.tick();
     }
+
 }
