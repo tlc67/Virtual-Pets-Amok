@@ -2,6 +2,8 @@ package pets_amok;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -32,11 +34,15 @@ public class VirtualPetShelterTest {
         virtualPets.addPet(marvel);
         assertEquals(5, virtualPets.getPets().size());
 
+        boolean wasMarvelFound = false;
+
         for (VirtualPet pet : virtualPets.pets) {
             if (marvel.petName.equals(pet.getPetName())) {
-                assertEquals(marvel, pet);
+                wasMarvelFound = true;
+                break;
             }
         }
+        assertTrue(wasMarvelFound);
     }
 
     @Test
