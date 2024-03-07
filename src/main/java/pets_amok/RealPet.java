@@ -45,7 +45,8 @@ public abstract class RealPet extends VirtualPet {
         return happinessLevel;
     }
 
-    public void tick(int hungerLevel, int thirstLevel, int boredomLevel, int happinessLevel) {
+    @Override
+    public void tick() {
         setHungerLevel(this.hungerLevel += 1);
         setThirstLevel(this.thirstLevel += 1);
         setBoredomLevel(this.boredomLevel += 1);
